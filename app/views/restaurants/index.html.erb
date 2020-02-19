@@ -1,0 +1,21 @@
+<!-- app/views/restaurants/index.html.erb -->
+<div class='container'>
+  <div class='card p-2 text-center bg-light'>
+    <h1>Restaurants</h1>
+  </div>
+    <div>
+      <p></p>
+      <%= link_to new_restaurant_path do %>
+      <i class='fas fa-utensils' aria-hidden='true'> Add a New Restaurant</i>
+      <% end %>
+    </div>
+    <% @restaurants.each do |restaurant| %>
+      <div class='card mt-2 p-4'>
+        <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+        <p></p>
+        <h4><%= restaurant.category %></h4>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.phone_number %></p>
+      </div>
+    <% end %>
+</div>

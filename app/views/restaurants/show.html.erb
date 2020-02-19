@@ -1,0 +1,24 @@
+<div class='container p-2'>
+  <div class='row my-4 m-1'>
+    <h1><%= @restaurant.name %></h1>
+  </div>
+  <div class='card bg-light p-2'>
+    <h4><%= @restaurant.category %></h4>
+    <p></p>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+  </div>
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
+  <%= @restaurant.reviews.each do |review| %>
+    <div class='card bg-light p-2'>
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
+    </div>
+  <% end %>
+  <p></p>
+  <div class='row m-1'>
+    <%= link_to restaurants_path do %>
+    <i class='fa fa-hand-o-left' aria-hidden='true'> Back To Restaurants List</i>
+    <% end %>
+  </div>
+</div>

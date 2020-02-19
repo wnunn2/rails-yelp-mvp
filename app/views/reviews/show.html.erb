@@ -1,0 +1,20 @@
+<div class='container p-2'>
+  <div class='row my-4 m-1'>
+    <h1>Reviews</h1>
+  </div>
+  <div class='card bg-light p-2'>
+    <h4><%= @review.content %></h4>
+    <p></p>
+    <p><%= @review.rating %></p>
+  </div>
+  <p></p>
+  <div class='row m-1'>
+    <%= link_to restaurant_path(restaurant) %>
+    <i class='fad fa-taco' aria-hidden='true'> Back To Restaurant Page</i>
+  <div class='row m-1'>
+    <%= link_to restaurants_path do %>
+    <i class='fa fa-hand-o-left' aria-hidden='true'> Back To Restaurants List</i>
+    <% end %>
+  </div>
+</div>
+
